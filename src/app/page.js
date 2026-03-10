@@ -1,65 +1,126 @@
-import Image from "next/image";
+import Image from "next/image"
+import Categories from "@/components/categories"
+import Header from "../components/header"
+import TopDeals from "@/components/Cards/topDeals"
+import ShopCategory from "@/components/Cards/shopCategory"
+import { Aboreto, Inter } from 'next/font/google'
+import { Fredoka } from "next/font/google";
+
+
+const aboreto = Aboreto({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-aboreto',
+});
+
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <div className="w-full">
+        <Header />
+        <Categories />
+
+        {/* Main Section Start */}
+        <div className="w-full px-4 md:px-5 lg:px-8 py-4 ">
+
+          {/* Hero Section Start */}
+          <div className="w-full h-[270px] lg:h-[400px] py-4 md:py-5 flex justify-center items-center">
+            <div className="bg-[url('/images/home/HeroSlider2.png')] bg-cover bg-[position:90%_0%] bg-no-repeat w-full h-full rounded-[10px] relative">
+
+              <h1
+                className={`${aboreto.className} text-[28px] sm:text-[30px] md:text-[35px] lg:text-[50px] xl:text-[60px] 2xl:text-[70px] absolute top-1/2 -translate-y-1/2 left-5 text-[#f77f00]`}
+              >
+                SAVE MORE EVERYDAY <br />
+                GRAB THE BEST OFFER NOW.
+              </h1>
+
+              <div
+                className={`${fredoka.className} flex justify-center items-center absolute bottom-8 left-1/2 -translate-x-1/2 w-full text-[#F8860E]/61 gap-2 lg:gap-3`}
+              >
+                <p className="">Big Savings Start Here - Only at Earnat</p>
+
+                <button className="bg-[#f77f00] px-2 py-1 rounded-[999px] text-[12px] text-white font-[300]">
+                  Shop Now
+                </button>
+              </div>
+
+            </div>
+          </div>
+          {/* Hero Section End */}
+
+          {/* Main Content Start */}
+          <div className="w-full py-4 ">
+
+            {/* Top Deals  */}
+            <div className="w-full flex flex-col gap-10">
+
+              <div className="w-full h-12 flex justify-start items-center bg-[#d9d9d9] text-[24px] font-bold ">
+                <h1>Top Deals</h1>
+              </div>
+
+              <div className="px-4 md:px-8 lg:px-16 flex justify-between items-center">
+
+                <TopDeals
+                  image="/images/Products/Samsung Phone.png"
+                  category="On Mobile Phones"
+                  discount="Flat 20% off"
+                />
+
+                <TopDeals
+                  image="/images/Products/Kurti's.png"
+                  category="On Mobile Phones"
+                  discount="Flat 20% off"
+                />
+
+                <TopDeals
+                  image="/images/Products/Men's Fashion.png"
+                  category="On Mobile Phones"
+                  discount="Flat 20% off"
+                />
+
+                <TopDeals
+                  image="/images/Products/Bags 2.png"
+                  category="On Mobile Phones"
+                  discount="Flat 20% off"
+                />
+
+                <TopDeals
+                  image="/images/Products/Toys.png"
+                  category="On Mobile Phones"
+                  discount="Flat 20% off"
+                />
+              </div>
+            </div>
+
+            {/* Shop By Category */}
+            <div className="w-full py-5 flex flex-col gap-10 ">
+              <div className="w-full px-4 md:px-8 lg:px-16 h-12 flex justify-start items-center bg-[#d9d9d9] text-[24px] font-bold ">
+                <h1>Shop By Category</h1>
+              </div>
+
+              <div className="px-4 md:px-8 lg:px-16 flex justify-between items-centerd ">
+                {/* <ShopCategory 
+          
+            /> */}
+              </div>
+            </div>
+
+          </div>
+          {/* Main Content End */}
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+
+        {/* Main Content End */}
+
+      </div>
+
+    </>
+
+  )
 }
