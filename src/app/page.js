@@ -67,31 +67,31 @@ export default function Home() {
               <div className="px-4 md:px-8 lg:px-16 flex justify-between items-center">
 
                 <TopDeals
-                  image="/images/Products/Samsung Phone.png"
+                  image="/images/products/Samsung Phone.png"
                   category="On Mobile Phones"
                   discount="Flat 20% off"
                 />
 
                 <TopDeals
-                  image="/images/Products/Kurti's.png"
+                  image="/images/products/Kurti's.png"
                   category="On Mobile Phones"
                   discount="Flat 20% off"
                 />
 
                 <TopDeals
-                  image="/images/Products/Men's Fashion.png"
+                  image="/images/products/Men's Fashion.png"
                   category="On Mobile Phones"
                   discount="Flat 20% off"
                 />
 
                 <TopDeals
-                  image="/images/Products/Bags 2.png"
+                  image="/images/products/Bags 2.png"
                   category="On Mobile Phones"
                   discount="Flat 20% off"
                 />
 
                 <TopDeals
-                  image="/images/Products/Toys.png"
+                  image="/images/products/Toys.png"
                   category="On Mobile Phones"
                   discount="Flat 20% off"
                 />
