@@ -1,4 +1,5 @@
 import { Aboreto, Inter } from 'next/font/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "./globals.css";
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
